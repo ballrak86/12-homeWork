@@ -1,0 +1,2 @@
+PAM и его модули (тут подсмотрел про модуль pam_succeed_if)
+http://rus-linux.net/lib.php?name=/MyLDP/sec/pam.html

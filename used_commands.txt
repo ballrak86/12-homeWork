@@ -1,0 +1,17 @@
+sudo useradd otus
+echo "123"|sudo passwd --stdin otus
+yum -y -q install nano
+groupadd admin
+usermod -a -G admin otus
+usermod -g admin otus
+id otus
+nano /etc/security/time.conf
+nano /etc/pam.d/sshd
+date
+useradd otus2
+echo "123"|sudo passwd --stdin otus2
+sed -i 's/^PasswordAuthentication.*$/PasswordAuthentication yes/' /etc/ssh/sshd_config && systemctl restart sshd.service
+ssh otus@127.0.0.1
+ssh otus2@127.0.0.1
+cat /etc/security/time.conf | grep -v '#' | grep -v '^$'
+cat /etc/pam.d/sshd
